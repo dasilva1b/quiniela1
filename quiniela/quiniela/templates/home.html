@@ -1,0 +1,49 @@
+<html>
+
+<h1> QUINIELA BRAZIL 2014 </h1>
+
+    <hr></hr>
+<h2> Creacion cuenta </h2>
+
+<form action="/creacioncuenta/" method="post">
+  {% csrf_token %}
+	      <div>
+  <label for="nombre">Usuario</label>  
+	      <input type="text" name="nombre">
+	      </div>
+	      <div>
+  <label for="nombre">Clave</label>  
+	      <input type="password" name="clave">
+	      </div>
+  <p> <input type="submit" value="Crear" class="button"></p>
+</form>
+
+    <hr></hr>
+<h2> Llenar Quiniela </h2>
+<form action="/iniciarsesion/" method="post">
+  {% csrf_token %}
+  <p> <input type="submit" value="Llenar" class="button"></p>
+</form>
+
+    <hr></hr>
+
+<h2> Tabla de posiciones </h2>
+  <ol>
+	{% for inc in gente %}
+	  <li> {{ inc }} </li>
+        {% endfor %}
+   </ol>
+
+<hr> </hr>
+
+<h2> Ver predicciones </h2>
+<form action="/verpredicc/" method="post">
+  {% csrf_token %}
+  <label for="nombre">De quien quiere ver las predicciones?</label>  
+	      <input type="text" name="nombre">
+
+  <p> <input type="submit" value="Ver" class="button"></p>
+</form>
+
+
+</html>
